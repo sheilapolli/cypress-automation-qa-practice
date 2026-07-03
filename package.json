@@ -1,0 +1,17 @@
+{
+  "name": "cypress-automation",
+  "version": "1.0.0",
+  "description": "Este projeto contém cenários de testes automatizados para a funcionalidade de Login do site QA Practice eCommerce, utilizando o framework **Cypress** com o padrão de arquitetura **Page Objects / Actions**.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@cypress/webpack-preprocessor": "^7.1.1",
+    "cypress": "^15.18.0"
+  }
+}

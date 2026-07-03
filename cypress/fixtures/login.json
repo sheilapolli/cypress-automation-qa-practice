@@ -1,0 +1,33 @@
+{
+  "validUser": {
+    "username": "admin@admin.com",
+    "password": "admin123"
+  },
+
+  "invalidPassword": {
+    "password": "IncorrectPassword"
+  },
+
+  "invalidUser": {
+    "username": "teste@admin.com",
+    "password": "IncorrectPassword"
+  },
+
+  "blankSpaces": {
+    "username": "   ",
+    "password": "   "
+  },
+
+  "validLogin": {
+    "expectedText": "Log Out"
+  },
+
+  "invalidLogin": {
+    "expectedText": "Bad credentials! Please try again! Make sure that you've registered."
+  },
+
+  "validLogout": {
+    "expectedText": "Login - Shop"
+  }
+
+}
