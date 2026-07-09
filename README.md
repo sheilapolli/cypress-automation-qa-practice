@@ -2,9 +2,9 @@
 
 Este projeto contém cenários de testes automatizados para a funcionalidade de Login e Logout do site QA Practice eCommerce, utilizando o framework **Cypress** com o padrão de arquitetura **Page Objects / Actions**.
 
-## 🎥 Demonstração
+## 🎥 Demonstração - teste
 
-![Execução dos Testes Automatizados](test_cases/cypress-login-logout.gif)
+![Execução dos Testes Automatizados](docs/cypress-login-logout.gif)
 
 ---
 
@@ -18,7 +18,7 @@ A suíte de testes valida os seguintes fluxos da tela de login:
 * **CT05 - Verificar msg de login com espaços em branco:** Validação de erro ao preencher os campos apenas com espaços.
 * **CT06 - Verificar msg de login com campos vazios:** Validação de erro ao tentar submeter o formulário sem preenchimento.
 
-![BDD contendo os cenários dos Testes Automatizados](test_cases/bdd-login-logout.md)
+![BDD contendo os cenários dos Testes Automatizados](docs/bdd-login-logout.md)
 
 ---
 
