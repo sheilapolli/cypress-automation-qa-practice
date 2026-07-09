@@ -2,7 +2,7 @@
 
 Este projeto contém cenários de testes automatizados para a funcionalidade de Login e Logout do site QA Practice eCommerce, utilizando o framework **Cypress** com o padrão de arquitetura **Page Objects / Actions**.
 
-## 🎥 Demonstração - teste
+## 🎥 Demonstração
 
 ![Execução dos Testes Automatizados](docs/cypress-login-logout.gif)
 
