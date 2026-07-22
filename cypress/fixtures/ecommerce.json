@@ -1,0 +1,38 @@
+{
+  "validAddress": {
+    "phone": "5511999999999",
+    "street": "Avenida Paulista, 1500",
+    "city": "São Paulo",
+    "country": "Brazil"
+  },
+    "noAddress": {
+    "phone": "",
+    "street": "",
+    "city": "",
+    "country": ""
+  },
+  "noStreet": {
+    "phone": "5511999999999",
+    "street": "",
+    "city": "São Paulo",
+    "country": "Brazil"
+  },
+  "noPhone": {
+    "phone": "",
+    "street": "Avenida Paulista, 1500",
+    "city": "São Paulo",
+    "country": "Brazil"
+  },
+  "noCity": {
+    "phone": "5511999999999",
+    "street": "Avenida Paulista, 1500",
+    "city": "",
+    "country": "Brazil"
+  },
+  "noCountry": {
+    "phone": "5511999999999",
+    "street": "Avenida Paulista, 1500",
+    "city": "São Paulo",
+    "country": ""
+  }
+}

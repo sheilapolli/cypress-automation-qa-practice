@@ -1,16 +1,17 @@
-import LoginPage from '../../pages/LoginPage';
-import LoginActions from '../../actions/LoginActions';
+import LoginPage from '../pages/LoginPage';
+import LoginActions from '../actions/LoginActions';
 
 describe('Login', () => {
-
     let loginData;
 
     beforeEach(() => {
+        // Carrega a massa de dados (fixture)
         cy.fixture('login').then((data) => {
             loginData = data;
         });
 
-        cy.visit('https://qa-practice.razvanvancea.ro/auth_ecommerce.html');
+        // Faz a navegação inicial para a URL do cypress.config.js
+        LoginPage.navigate(); 
     });
 
     it('CT01 - Realizar login com sucesso', () => {

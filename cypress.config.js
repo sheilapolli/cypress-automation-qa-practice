@@ -1,11 +1,11 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  allowCypressEnv: false,
-
   e2e: {
+    // Definindo a URL base de forma global e sênior
+    baseUrl: 'https://qa-practice.razvanvancea.ro',
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      // implemente node event listeners aqui se necessário
     },
   },
 });

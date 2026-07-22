@@ -1,24 +1,59 @@
-# Projeto de Testes Automatizados - QA Practice 
+# 🧪 Projeto de Testes Automatizados - QA Practice E-commerce
 
-Este projeto contém cenários de testes automatizados para a funcionalidade de Login e Logout do site QA Practice eCommerce, utilizando o framework **Cypress** com o padrão de arquitetura **Page Objects / Actions**.
+Este projeto contém uma suíte de **testes automatizados end-to-end (E2E)** para validação dos fluxos de **Login, Logout e Checkout (Compra)** da aplicação **QA Practice E-commerce**.
 
-## 🎥 Demonstração
+Os testes foram desenvolvidos utilizando o framework **Cypress**, seguindo boas práticas de automação de testes, incluindo:
 
-![Execução dos Testes Automatizados](docs/cypress-login-logout.gif)
+- Arquitetura **Page Objects / Actions Pattern**
+- Separação de responsabilidades
+- Reutilização de métodos
+- Organização de massa de dados utilizando Fixtures
+- Cenários positivos e negativos
+- Validações de regras de negócio
+
+🔗 **Aplicação utilizada para testes:**
+
+https://qa-practice.razvanvancea.ro/auth_ecommerce.html
 
 ---
 
-## 🧪 Cenários de Testes Cobertos
+# 🎥 Demonstração da Execução
 
-A suíte de testes valida os seguintes fluxos da tela de login:
-* **CT01 - Realizar login com sucesso:** Acesso utilizando credenciais válidas.
-* **CT02 - Realizar logout com sucesso:** Validação da saída do sistema após um login válido.
-* **CT03 - Verificar msg de login com senha inválida:** Validação de erro ao inserir o usuário correto mas com senha incorreta.
-* **CT04 - Verificar msg de login com usuário inválido:** Validação de erro com usuário e senha incorretos.
-* **CT05 - Verificar msg de login com espaços em branco:** Validação de erro ao preencher os campos apenas com espaços.
-* **CT06 - Verificar msg de login com campos vazios:** Validação de erro ao tentar submeter o formulário sem preenchimento.
+![Execução dos Testes Automatizados](cypress/docs/execute-cypress.gif)
 
-![BDD contendo os cenários dos Testes Automatizados](docs/bdd-login-logout.md)
+---
+
+# 🧪 Cenários de Testes Automatizados Cobertos
+
+A suíte contempla validações das funcionalidades de **autenticação, logout e fluxo de compra**, garantindo o comportamento esperado para cenários positivos e negativos.
+
+## 🔐 Login e Logout
+
+| ID | Cenário | Descrição |
+|---|---|---|
+| **CT01** | Realizar login com sucesso | Valida o acesso ao sistema utilizando credenciais válidas. |
+| **CT02** | Realizar logout com sucesso | Verifica se o usuário consegue sair corretamente após autenticação válida. |
+| **CT03** | Login com senha inválida | Valida a mensagem de erro ao informar usuário correto e senha incorreta. |
+| **CT04** | Login com usuário inválido | Verifica o comportamento do sistema com credenciais inexistentes. |
+| **CT05** | Login com espaços em branco | Valida tratamento de entrada contendo apenas espaços nos campos obrigatórios. |
+| **CT06** | Login com campos vazios | Verifica mensagens de validação ao tentar enviar o formulário sem preenchimento. |
+
+---
+
+## 🛒 Fluxo de Compra
+
+| ID | Cenário | Descrição |
+|---|---|---|
+| **CT07** | Realizar compra com sucesso | Valida a conclusão da compra preenchendo todos os campos obrigatórios com dados válidos. |
+| **CT08** | Impedir finalização da compra com campos vazios | Verifica se o sistema impede a finalização da compra quando nenhum campo obrigatório é preenchido. |
+| **CT09** | Impedir finalização da compra com campo Phone Number vazio | Valida a obrigatoriedade do campo telefone durante o preenchimento dos dados de compra. |
+| **CT10** | Impedir finalização da compra com campo Street vazio | Verifica se o sistema apresenta validação ao deixar o endereço (Street) sem preenchimento. |
+| **CT11** | Impedir finalização da compra com campo City vazio | Valida a obrigatoriedade do campo cidade para concluir a compra. |
+| **CT12** | Impedir finalização da compra com campo Country vazio | Verifica se o sistema impede a conclusão do pedido quando o país não é informado. |
+
+---
+
+![BDD contendo os cenários dos Testes Automatizados](cypress/docs/bdd-cenarios.md)
 
 ---
 
@@ -57,8 +92,24 @@ npx cypress run
 
 ## 📁 Estrutura do Projeto
 
-O projeto segue a seguinte organização de pastas para os testes de login:
-* `cypress/fixtures/login.json`: Armazena as massas de dados utilizadas nos testes.
-* `cypress/e2e/pages/LoginPage.js`: Mapeamento de elementos visuais da tela.
-* `cypress/e2e/actions/LoginActions.js`: Funções de interações e asserções (validações).
-* `cypress/e2e/auth/login-logout.cy.js`: O arquivo de especificação que contém a suíte descrita acima.
+cypress
+│
+├── actions
+│   ├── LoginActions.js
+│   └── EcommerceActions.js
+│
+├── e2e
+│   └── login-logout.cy.json
+│   └── ecommerce.cy.json
+│
+├── fixtures
+│   └── login.json
+│   └── ecommerce.json
+│
+├── pages
+│   ├── LoginPage.js
+│   └── EcommercePage.js
+│
+└── docs
+    ├── execute-cypress.gif
+    └── bdd-cenarios.md
