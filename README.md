@@ -92,6 +92,7 @@ npx cypress run
 
 ## 📁 Estrutura do Projeto
 
+```text
 cypress
 │
 ├── actions
@@ -113,3 +114,19 @@ cypress
 └── docs
     ├── execute-cypress.gif
     └── bdd-cenarios.md
+.github/
+└── workflows/
+    └── ci.yml
+```
+
+## 📌 Organização das Pastas
+
+| Pasta | Descrição |
+|--------|-----------|
+| **actions/** | Contém a camada de ações responsável por implementar os fluxos de negócio dos testes. Essa camada orquestra as interações entre os cenários de teste e os Page Objects, tornando os testes mais legíveis e reutilizáveis. |
+| **pages/** | Implementa o padrão **Page Object Model (POM)**, centralizando seletores e métodos de interação com as páginas da aplicação. Isso reduz duplicidade de código e facilita futuras manutenções. |
+| **e2e/** | Contém os cenários de testes automatizados organizados por funcionalidade. Cada arquivo representa uma suíte de testes executada pelo Cypress. |
+| **fixtures/** | Armazena as massas de dados utilizadas durante a execução dos testes, permitindo separar os dados da lógica de automação e facilitando sua manutenção. |
+| **support/** | Reúne configurações globais do Cypress, comandos customizados e inicializações compartilhadas entre todos os testes. |
+| **docs/** | Armazena arquivos utilizados na documentação do projeto, BDD e evidências de execução. |
+| **.github/workflows/** | Contém o pipeline de Integração Contínua (CI) responsável por executar automaticamente a suíte de testes no GitHub Actions a cada push ou pull request. |

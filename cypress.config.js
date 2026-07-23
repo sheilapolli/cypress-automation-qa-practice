@@ -8,4 +8,7 @@ module.exports = defineConfig({
       // implemente node event listeners aqui se necessário
     },
   },
+    env: {
+    language: "pt-BR"
+    }
 });
