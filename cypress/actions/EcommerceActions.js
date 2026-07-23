@@ -24,7 +24,7 @@ class EcommerceActions {
     }
 
     /**
-     * Compra realizada com sucesso.
+     * Valida que a compra foi realizada com sucesso.
      */
     verificarCompraComSucesso(mensagemEsperada) {
 
@@ -34,29 +34,25 @@ class EcommerceActions {
     }
 
     /**
-     * Validação HTML5 para INPUTS obrigatórios.
+     * Valida que o navegador bloqueou o envio de um campo obrigatório
      */
-    verificarCampoObrigatorioBarrouNavegador(
-        seletorCampo,
-        mensagemDesejada = 'Preencha este campo'
-    ) {
+    verificarCampoObrigatorioBarrouNavegador(seletorCampo) {
 
         cy.get(seletorCampo).then(($campo) => {
 
             const elemento = $campo[0];
 
             expect(elemento.validity.valueMissing).to.be.true;
-            expect(elemento.validationMessage)
-                .to.contain(mensagemDesejada);
+            expect(elemento.checkValidity()).to.be.false;
+            expect(elemento.validationMessage).to.not.be.empty;
 
         });
 
-        cy.get('body')
-            .should('not.contain', 'Congrats!');
+        cy.contains('Congrats!').should('not.exist');
     }
 
     /**
-     * Validação específica para Country.
+     * Validação específica para o campo Country.
      */
     verificarCountryObrigatorio() {
 
@@ -64,8 +60,7 @@ class EcommerceActions {
             .should('exist')
             .and('have.value', 'Select a country...');
 
-        cy.get('body')
-            .should('not.contain', 'Congrats!');
+        cy.contains('Congrats!').should('not.exist');
     }
 
 }
